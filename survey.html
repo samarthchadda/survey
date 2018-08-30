@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<title>Survey Form</title>
+	<style type="text/css">
+		/*################################\
+        GLOBAL
+\*###############################*/
+html, body, form {
+    padding: 10;
+    margin: 20px;
+    background-color: #d9cf91;
+}
+
+/*################################\
+        HEADER
+\*###############################*/
+header{
+        background: url("https://lab.wainic.yj.fr/images/free-code-camp.png") no-repeat center;
+        background-size: cover;           
+}
+.jumbotron{ margin-bottom:0; }
+
+/*################################\
+        FORM
+\*###############################*/
+
+.textarea-container textarea{        
+        resize: vertical;
+        height: 13vh;
+        padding: 16px;
+}
+.question, .person{ margin: 16px 0 0 0; }
+.text-right{ font-size: .8rem; }
+
+
+/*################################\
+        MEDIA QUERIES
+\*###############################*/
+@media screen and (max-width: 576px){
+        .header-main-container { background-color: rgba(137,131,87,.8); }        
+}
+	</style>
+</head>
+<body>
+    <header class="jumbotron jumbotron-fluid">
+        <div class="header-main-container container">
+            <h1 id="title" class="font-weight-bold text-white">Form Survey</h1>
+            <p id="description" class="header-paragraph font-weight-bold text-white">Let us know how we can improve freeCodeCamp</p>
+        </div>
+    </header>
+    <main>
+        <div class="form-main-container container">
+            <form action="#" method="POST" id="survey-form">
+                <div class="row">
+                    <div class="col-lg-12 col-xl-10">
+                        <div class="form-group person">
+                            <label for="name" id="name-label" class="font-weight-bold">Name</label>
+                            <input type="text" class="form-control" id="name" name="name" maxlength="30" required placeholder="Name">
+                        </div>
+                        <div class="form-group person">
+                            <label for="email"  id="email-label" class="font-weight-bold">Email</label>
+                            <input type="email" class="form-control" id="email" name="email" required placeholder="Email">
+                        </div>
+                    </div>
+                    <div class="col-lg-12 col-xl-2 input-age-container d-flex justify-content-center align-items-center">
+                        <div class="input-age-flex form-group person ">
+                            <label for="number"  id="number-label" class="font-weight-bold">Age</label>
+                            <input type="number" class="form-control" min="5" id="number" name="age" max="150" placeholder="Age">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12 col-lg-6">
+                        <p class="question font-weight-bold">Which option best describes your current role?</p>
+                        <select name="role" id="dropdown" class="custom-select">
+                            <option disabled selected value>Select an option</option>
+                            <option value="Student">Student</option>
+                            <option value="Full Time Job">Full Time Job</option>
+                            <option value="Full Time Learner">Full Time Learner</option>
+                            <option value="Prefer not to say">Prefer not to say</option>
+                            <option value="Other">Other</option>
+                        </select>
+                        <p class="question font-weight-bold">How likely is that you would recommend freeCodeCamp to a friend?</p>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="recommend" id="definitely" value="Definitely">
+                            <label class="custom-control-label" for="definitely">Definitely</label>                            
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="recommend" id="maybe" value="Maybe">
+                            <label class="custom-control-label" for="maybe">Maybe</label>                            
+                        </div>
+                        <div class="custom-control custom-radio">
+                            <input type="radio" class="custom-control-input" name="recommend" id="notSure" value="Not sure">
+                            <label class="custom-control-label" for="notSure">Not sure</label>                            
+                        </div>
+                        <p class="question font-weight-bold">What do you like most in FCC</p>
+                        <select name="like" id="like" class="custom-select">
+                            <option disabled selected value>Select an option</option>
+                            <option value="challenges">Challenges</option>
+                            <option value="projects">Projects</option>
+                            <option value="community">Community</option>
+                            <option value="openSource">Open Source</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-12 col-lg-6">
+                        <p class="question font-weight-bold">Things that should be improved in the future (Check all that apply)</p>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="front" value="front" id="front">
+                            <label class="custom-control-label" for="front">Front-end Projects</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="back" value="back" id="back">
+                            <label class="custom-control-label" for="back">Back-end Projects</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="data" value="data" id="data">
+                            <label class="custom-control-label" for="data">Data visualization</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="challenges" value="challenges" id="challenges">
+                            <label class="custom-control-label" for="challenges">Challenges</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="open" value="open" id="open">
+                            <label class="custom-control-label" for="open">Open Source Community</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="git" value="git" id="git">
+                            <label class="custom-control-label" for="git">Gitter help rooms</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="video" value="video" id="video">
+                            <label class="custom-control-label" for="video">Videos</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="wiki" value="wiki" id="wiki">
+                            <label class="custom-control-label" for="wiki">Wiki</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="forum" value="forum" id="forum">
+                            <label class="custom-control-label" for="forum">Forum</label>
+                        </div>
+                        <div class="custom-control custom-checkbox">
+                            <input type="checkbox" class="custom-control-input" name="course" value="course" id="course">
+                            <label class="custom-control-label" for="course">Additional Courses</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col textarea-container form-group">
+                        <p class="question font-weight-bold">Any comments or suggestions ?</p>
+                        <textarea name="comment" id="comment" class="form-control text-justify"></textarea>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col d-flex justify-content-center">
+                        <input type="submit" value="Submit" id="submit" class="btn btn-success btn-lg">
+                    </div>
+                </div>             
+        </div>
+        </form>
+        <div class="container">
+         <p class="text-right">Coded with 💗 by
+            <a href="https://codepen.io/Turwaithion/" title="My codepen" class="text-info">Turwaithion</a>
+        </p>
+        </div>
+    </main>
+</body>
+</html>
